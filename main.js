@@ -1,1 +1,1 @@
-// knockout.punches additions v0.1.0
+// knockout.punches additions v0.1.2
