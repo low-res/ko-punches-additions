@@ -1,0 +1,22 @@
+{
+  "name": "ko-punches-additions",
+  "version": "0.1.0",
+  "homepage": "https://github.com/low-res/ko-punches-additions",
+  "authors": [
+    "Andreas Paul <paul@low-res.de>"
+  ],
+  "description": "Some additions to knockout.punches. Adds a formater and translate filter",
+  "main": "main.js",
+  "keywords": [
+    "knockout",
+    "knockout.punches"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
