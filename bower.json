@@ -1,12 +1,12 @@
 {
   "name": "ko-punches-additions",
-  "version": "0.1.0",
+  "version": "0.1.5",
   "homepage": "https://github.com/low-res/ko-punches-additions",
   "authors": [
     "Andreas Paul <paul@low-res.de>"
   ],
   "description": "Some additions to knockout.punches. Adds a formater and translate filter",
-  "main": "main.js",
+  "main": "src/main.js",
   "dependencies": {
     "requirejs": "~2.1.11",
     "knockout": "~3.3.0",

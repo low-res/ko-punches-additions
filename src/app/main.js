@@ -1,7 +1,6 @@
-// knockout.punches additions v0.1.0
 define(['knockout',
-        'utils/translator',
-        'utils/formater',
+        './utils/translator',
+        './utils/formater',
         'knockout-punches'
     ],
     function (ko, Translator, Formater) {

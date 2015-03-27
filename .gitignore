@@ -1,2 +1,4 @@
 .idea
-bower_components
+bower_modules
+test
+node_modules

@@ -1,5 +1,4 @@
 define(["numeral"], function( numeral ) {
-
     var _private = {
 
         /**
