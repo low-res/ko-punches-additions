@@ -1,13 +1,13 @@
-define(['knockout',
-        './utils/translator',
-        './utils/formater',
-        'knockout-punches'
+define(
+    [
+        'translator',
+        'formater'
     ],
-    function (ko, Translator, Formater) {
+    function ( Translator, Formater) {
 
         return {
 
-            init : function init( textbooklet ) {
+            init : function init( ko, textbooklet ) {
                 ko.punches.enableAll();
 
                 // knockout punches custom filter: translation

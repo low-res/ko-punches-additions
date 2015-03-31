@@ -1,5 +1,9 @@
 
-define(["ko-punches-additions"], function(kopa) {
+define([
+    "knockout",
+    "ko-punches-additions",
+    "knockout-punches"
+], function(ko, kopa) {
 
     var o, id;
 
@@ -14,7 +18,7 @@ define(["ko-punches-additions"], function(kopa) {
     describe('Knockout punches additions', function() {
 
         it('should be inited', function() {
-            kopa.init();
+            kopa.init( ko );
             expect(true).toBeTruthy();
         });
 

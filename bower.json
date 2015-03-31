@@ -6,7 +6,7 @@
     "Andreas Paul <paul@low-res.de>"
   ],
   "description": "Some additions to knockout.punches. Adds a formater and translate filter",
-  "main": "src/main.js",
+  "main": "dist/kopunches-additions.js",
   "dependencies": {
     "requirejs": "~2.1.11",
     "knockout": "~3.3.0",
