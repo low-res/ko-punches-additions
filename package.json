@@ -1,6 +1,6 @@
 {
   "name": "ko-punches-additions",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "devDependencies": {
     "gulp": "^3.6.2",
     "gulp-requirejs-bundler": "^0.1.1",
