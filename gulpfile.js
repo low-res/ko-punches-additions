@@ -29,15 +29,17 @@ var banner = ['/*!',
 // requirejs config
 var requireJsRuntimeConfig = vm.runInNewContext(fs.readFileSync('src/app/require.config.js') + '; require;');
 requireJsOptimizerConfig = merge(requireJsRuntimeConfig, {
-    out: 'kopunches-additions.js',
+    out: 'ko-punches-additions.js',
     baseUrl: './src',
-    name: 'app/main',
+    name: 'ko-punches-additions',
     paths: {
-        requireLib: 'bower_modules/requirejs/require'
+        requireLib: 'bower_modules/requirejs/require',
+        "ko-punches-additions": "app/main"
     },
-    include: [
-    ],
-    insertRequire: ['app/main'],
+    include: [],
+    //wrap: true,
+    exclude: ['knockout'],
+    insertRequire: ['ko-punches-additions'],
     bundles: {
         // If you want parts of the site to load on demand, remove them from the 'include' list
         // above, and group them into bundles here.

@@ -1,8 +1,7 @@
 
 define([
     "knockout",
-    "ko-punches-additions",
-    "knockout-punches"
+    "app/dist"
 ], function(ko, kopa) {
 
     var o, id;

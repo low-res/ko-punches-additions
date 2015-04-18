@@ -1,7 +1,8 @@
 define(
     [
         'translator',
-        'formater'
+        'formater',
+        'knockout.punches'
     ],
     function ( Translator, Formater) {
 

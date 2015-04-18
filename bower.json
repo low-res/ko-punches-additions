@@ -1,6 +1,6 @@
 {
   "name": "ko-punches-additions",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "homepage": "https://github.com/low-res/ko-punches-additions",
   "authors": [
     "Andreas Paul <paul@low-res.de>"
@@ -9,7 +9,9 @@
   "main": "dist/kopunches-additions.js",
   "dependencies": {
     "requirejs": "~2.1.11",
-    "knockout": "~3.3.0",
+    "knockout": "~3.3.0"
+  },
+  "devDependencies": {
     "knockout.punches": "https://github.com/mbest/knockout.punches.git",
     "numeral": "~1.5.3"
   },
@@ -23,6 +25,9 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "src",
+    "package.json",
+    "karma.conf.js"
   ]
 }
