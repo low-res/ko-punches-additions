@@ -36,7 +36,7 @@ define(["numeral"], function( numeral ) {
         formatValueToType : function( value, formatType ) {
             //console.log(">>>> <<<< formatValue >>>>>>> <<<<");
             var formatedValue = value;
-            if( value.toString()!="" ) {
+            if( value && value.toString()!="" ) {
                 //console.log(value+" : type : "+formatType);
                 switch( formatType ) {
                     case "float":
