@@ -2,17 +2,19 @@ define(
     [
         'translator',
         'formater',
+        'knockout',
         'knockout.punches'
     ],
-    function ( Translator, Formater) {
+    function ( Translator, Formater, ko) {
+
+        var translator =  new Translator();
 
         return {
-
             init : function init( ko, textbooklet ) {
                 ko.punches.enableAll();
 
                 // knockout punches custom filter: translation
-                var translator = new Translator(textbooklet);
+                translator.setBooklet(textbooklet);
                 ko.filters.translate = function (value) {
                     return translator.translate(ko.unwrap(value));
                 };
@@ -22,6 +24,19 @@ define(
                     var formatedValue = Formater.formatValueToType(ko.unwrap(value), formatType);
                     return formatedValue;
                 };
+            },
+
+            translate: function( label ){
+                return translator.translate(label);
+            },
+
+            format: function(value, formatType){
+                var formatedValue = Formater.formatValueToType(ko.unwrap(value), formatType);
+                return formatedValue;
+            },
+
+            setLocale : function(locale){
+                translator.setLocale(locale);
             }
         }
     }
