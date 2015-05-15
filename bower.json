@@ -26,7 +26,6 @@
     "bower_components",
     "test",
     "tests",
-    "src",
     "package.json",
     "karma.conf.js"
   ]

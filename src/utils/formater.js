@@ -24,6 +24,7 @@ define(["numeral"], function( numeral ) {
             }
             return formatType;
         }
+
     }
 
     var publicAPI = {
@@ -34,9 +35,9 @@ define(["numeral"], function( numeral ) {
 
 
         formatValueToType : function( value, formatType ) {
-            //console.log(">>>> <<<< formatValue >>>>>>> <<<<");
+            //console.log(">>>> <<<< formatValue >>>>>>> <<<<",arguments );
             var formatedValue = value;
-            if( value && value.toString()!="" ) {
+            if( value != undefined && value.toString()!="" ) {
                 //console.log(value+" : type : "+formatType);
                 switch( formatType ) {
                     case "float":
@@ -95,6 +96,10 @@ define(["numeral"], function( numeral ) {
                         formatedValue = this.formatDateObjectForDb(value);
                         break;
 
+                    case "euro":
+                        formatedValue = "€ "+this.formatValueToType(value,"float");
+                        break;
+
                     case "":
                         formatedValue = value;
                         break;
@@ -106,6 +111,7 @@ define(["numeral"], function( numeral ) {
 //			console.log("formatedValue :: "+formatedValue);
             return formatedValue;
         },
+
 
         /**
          * formatFloat
@@ -125,12 +131,12 @@ define(["numeral"], function( numeral ) {
             }
         },
 
+
         stripCommaFromFloat : function( numberStr ) {
             numberStr = numberStr.toString();
             if( numberStr.indexOf(',') > -1 && numberStr.indexOf(".") == -1) numberStr = numberStr.replace(',','.'); // format numbers with single comma like 0,5 to 0.5
             return numberStr;
         },
-
 
 
         /**
@@ -154,7 +160,6 @@ define(["numeral"], function( numeral ) {
         },
 
 
-
         /**
          * extractDateFromPHPdate
          * when serialising entities in php and sending via json
@@ -170,7 +175,6 @@ define(["numeral"], function( numeral ) {
         },
 
 
-
         extractTimeFromPHPdate : function( dateStr ) {
             if( dateStr ){
                 var parts = dateStr.split("T");
@@ -183,7 +187,6 @@ define(["numeral"], function( numeral ) {
         },
 
 
-
         formatGermanDateToDbDate : function( germanDate ){
             var result = germanDate;
             var parts = germanDate.split('.');
@@ -194,12 +197,12 @@ define(["numeral"], function( numeral ) {
         },
 
 
-
         formatDbDateToGermanDate : function( germanDate ){
             var result = germanDate;
             var parts = germanDate.split('-');
-            if( parts.length == 3 ){
-                result = parts[2]+"."+parts[1]+"."+parts[0];
+            if( parts.length == 3 ) {
+                var dayParts = parts[2].split(" "); // strip time string if present after day
+                result = dayParts[0]+"."+parts[1]+"."+parts[0];
             }
             return result;
         },
