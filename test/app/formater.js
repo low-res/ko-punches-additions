@@ -89,6 +89,14 @@ define([
             expect(f).toEqual("€ 1,000.00");
         });
 
+        it('test euro-or-empty', function(){
+            var f = Formater.formatValueToType( 1000, "euro-or-empty");
+            expect(f).toEqual("€ 1,000.00");
+
+            f = Formater.formatValueToType( 0, "euro-or-empty");
+            expect(f).toEqual("");
+        });
+
     });
 
 });
