@@ -100,6 +100,11 @@ define(["numeral"], function( numeral ) {
                         formatedValue = "€ "+this.formatValueToType(value,"float");
                         break;
 
+                    case "euro-or-empty":
+                        var e = this.formatValueToType(value,"float-or-empty");
+                        formatedValue = e!="" ? "€ "+e : e;
+                        break;
+
                     case "":
                         formatedValue = value;
                         break;
