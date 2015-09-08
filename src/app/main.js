@@ -37,6 +37,10 @@ define(
 
             setLocale : function(locale){
                 translator.setLocale(locale);
+            },
+
+            getLocale : function(){
+                return translator.getLocale();
             }
         }
     }

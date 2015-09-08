@@ -18,6 +18,10 @@ define([], function(  ) {
         this.locale = l;
     }
 
+    Translator.prototype.getLocale = function( ) {
+        return this.locale;
+    }
+
     /**
      * translate
      * return the textstring of the given id.
