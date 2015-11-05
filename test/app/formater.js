@@ -97,6 +97,16 @@ define([
             expect(f).toEqual("");
         });
 
+        it('should handle different dateformats', function() {
+            Formater.setDateFormat("MM/DD/YYYY");
+            var f = Formater.formatValueToType( "2015-10-01", "date");
+            expect(f).toEqual("10/01/2015");
+
+            Formater.setDateFormat("DDMMYYYY");
+            var f = Formater.formatValueToType( "2015-10-01", "date");
+            expect(f).toEqual("01102015");
+        })
+
     });
 
 });

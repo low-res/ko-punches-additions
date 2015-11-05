@@ -1,5 +1,9 @@
-define(["numeral"], function( numeral ) {
+define([
+    "numeral",
+    "moment"
+], function( numeral ) {
     var _private = {
+        dateFormat : "DD.MM.YYYY",
 
         /**
          * getFormatType
@@ -89,11 +93,11 @@ define(["numeral"], function( numeral ) {
                         break;
 
                     case "date":
-                        formatedValue = this.formatDbDateToGermanDate(value);
+                        formatedValue = moment(value).format(_private.dateFormat); //this.formatDbDateToGermanDate(value);
                         break;
 
                     case "date-db":
-                        formatedValue = this.formatDateObjectForDb(value);
+                        formatedValue = moment(value).format('DD.MM.YYYY'); //this.formatDateObjectForDb(value);
                         break;
 
                     case "euro":
@@ -117,6 +121,10 @@ define(["numeral"], function( numeral ) {
             return formatedValue;
         },
 
+
+        setDateFormat : function( dateFormat ) {
+            _private.dateFormat = dateFormat;
+        },
 
         /**
          * formatFloat

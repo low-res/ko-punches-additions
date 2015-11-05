@@ -41,6 +41,10 @@ define(
 
             getLocale : function(){
                 return translator.getLocale();
+            },
+
+            setDateFormat : function(formatStr){
+                Formater.setDateFormat(formatStr);
             }
         }
     }
