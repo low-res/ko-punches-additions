@@ -43,6 +43,14 @@ define(
                 return translator.getLocale();
             },
 
+            setVariable : function(key, value){
+                translator.setVariable(key, value);
+            },
+
+            getVariable : function(key){
+                return translator.getVariable(key);
+            },
+
             setDateFormat : function(formatStr){
                 Formater.setDateFormat(formatStr);
             }
