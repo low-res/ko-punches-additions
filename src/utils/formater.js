@@ -1,7 +1,7 @@
 define([
     "numeral",
     "moment"
-], function( numeral ) {
+], function( numeral, moment ) {
     var _private = {
         dateFormat : "DD.MM.YYYY",
 

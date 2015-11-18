@@ -9,12 +9,14 @@
   "main": "dist/ko-punches-additions.js",
   "dependencies": {
     "requirejs": "~2.1.11",
-    "knockout": "~3.3.0",
-    "moment":"2.9.*"
-  },
-  "devDependencies": {
+    "knockout": "~3.*",
+    "moment":"2.*",
     "knockout.punches": "https://github.com/mbest/knockout.punches.git",
     "numeral": "~1.5.3"
+  },
+  "devDependencies": {
+
+
   },
   "keywords": [
     "knockout",
