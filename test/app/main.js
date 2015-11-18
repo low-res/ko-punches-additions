@@ -48,6 +48,19 @@ define([
             expect(f).toEqual("1,000.00");
         });
 
+        it('should return the current locale', function(){
+            kopa.init( ko, {label:"Text1"} );
+            kopa.setLocale("de");
+            expect(kopa.getLocale()).toEqual("de");
+        });
+
+        it('should set the dateformat', function(){
+            kopa.init( ko, {label:"Text1"} );
+            kopa.setDateFormat("DD//MM//YYYY");
+            var r = kopa.format(new Date("2015-11-21"), "date");
+            expect(r).toEqual("21//11//2015");
+        });
+
     });
 
 });
