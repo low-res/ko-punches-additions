@@ -1,6 +1,6 @@
 
 define([
-    "formater"
+    "utils/formater"
 ], function(Formater) {
 
     var o, id;

@@ -12,4 +12,5 @@
   require.shim['jasmine'] = { exports: 'window.jasmineRequire' };
   require.shim['jasmine-html'] = { deps: ['jasmine'], exports: 'window.jasmineRequire' };
   require.shim['jasmine-boot'] = { deps: ['jasmine', 'jasmine-html'], exports: 'window.jasmineRequire' };
+
 })();

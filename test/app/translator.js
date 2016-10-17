@@ -1,6 +1,6 @@
 
 define([
-    "translator"
+    "utils/translator"
 ], function(Translator) {
 
     var translator;
