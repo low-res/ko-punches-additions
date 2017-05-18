@@ -1,7 +1,7 @@
 define(
     [
-        'utils/translator.js',
-        'utils/formater.js',
+        '../utils/translator.js',
+        '../utils/formater.js',
         'knockout',
         'knockout.punches'
     ],
