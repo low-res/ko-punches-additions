@@ -1,6 +1,7 @@
 define([
     "numeral",
-    "moment"
+    "moment",
+    "numerall10n"
 ], function( numeral, moment ) {
     var _private = {
         dateFormat : "DD.MM.YYYY",
@@ -230,6 +231,10 @@ define([
             } else {
                 return dateObj;
             }
+        },
+
+        setLanguage : function( locale ) {
+            numeral.language(locale);
         }
     };
 

@@ -1,7 +1,7 @@
 define(
     [
-        '../utils/translator.js',
-        '../utils/formater.js',
+        'utils/translator.js',
+        'utils/formater.js',
         'knockout',
         'knockout.punches'
     ],
@@ -37,6 +37,7 @@ define(
 
             setLocale : function(locale){
                 translator.setLocale(locale);
+                formater.setLanguage(locale);
             },
 
             getLocale : function(){
