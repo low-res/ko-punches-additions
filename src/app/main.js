@@ -37,7 +37,7 @@ define(
 
             setLocale : function(locale){
                 translator.setLocale(locale);
-                formater.setLanguage(locale);
+                Formater.setLanguage(locale);
             },
 
             getLocale : function(){
