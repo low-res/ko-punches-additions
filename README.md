@@ -11,8 +11,7 @@ Adds two new filters to ko.punches:
 ## Init
 	define([
 		"knockout",
-		"ko-punches-additions",
-		"knockout-punches"
+		"ko-punches-additions"
 	], function(ko, kopa) {
 		var textbooklet = {};
 		kopa.init( ko, textbooklet );
@@ -28,3 +27,4 @@ Format
 Translate
 
 	<span>{{ 'soemtextlabel' | translate }}</span>
+
