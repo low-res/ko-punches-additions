@@ -1,7 +1,7 @@
 define(
     [
-        '../utils/translator.js',
-        '../utils/formater.js',
+        'low-res/translator',
+        'low-res/formater',
         'knockout',
         'knockout.punches'
     ],
@@ -37,7 +37,7 @@ define(
 
             setLocale : function(locale){
                 translator.setLocale(locale);
-                Formater.setLanguage(locale);
+                Formater.setLocale(locale);
             },
 
             getLocale : function(){
@@ -50,10 +50,6 @@ define(
 
             getVariable : function(key){
                 return translator.getVariable(key);
-            },
-
-            setDateFormat : function(formatStr){
-                Formater.setDateFormat(formatStr);
             }
         }
     }
