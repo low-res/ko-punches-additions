@@ -3,7 +3,7 @@ define(
         'low-res/translator',
         'low-res/formater',
         'knockout',
-        'knockout.punches'
+        './vendor/knockout.punches.min'
     ],
     function ( Translator, Formater, ko) {
 
