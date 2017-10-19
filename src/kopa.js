@@ -50,6 +50,10 @@ define(
 
             getVariable : function(key){
                 return translator.getVariable(key);
+            },
+
+            addCustomFormat : function ( formatId, processorFunction ) {
+                Formater.addCustomFormat( formatId, processorFunction );
             }
         }
     }
