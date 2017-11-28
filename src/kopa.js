@@ -26,8 +26,8 @@ define(
                 };
             },
 
-            translate: function( label ){
-                return translator.translate(label);
+            translate: function( label, values ){
+                return translator.translate(label, values);
             },
 
             format: function(value, formatType){

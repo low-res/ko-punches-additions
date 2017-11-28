@@ -27,6 +27,12 @@ define([
             expect(r).toEqual("Text1");
         });
 
+        it('should execute translate with parameters', function () {
+            kopa.init( ko, {label:"My %s"} );
+            var r = kopa.translate("label", ['variable']);
+            expect(r).toEqual("My variable");
+        });
+
         it('should handle locales', function(){
             var booklet = {
                 de: {label:"Feld1"},
