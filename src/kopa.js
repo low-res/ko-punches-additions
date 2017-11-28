@@ -15,8 +15,8 @@ define(
 
                 // knockout punches custom filter: translation
                 translator.setBooklet(textbooklet);
-                ko.filters.translate = function (value) {
-                    return translator.translate(ko.unwrap(value));
+                ko.filters.translate = function (value, variables) {
+                    return translator.translate(ko.unwrap(value), variables);
                 };
 
                 // knockout punches custom filter: formater
