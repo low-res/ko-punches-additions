@@ -19,7 +19,7 @@ define(
             var self = this;
             ko.punches.enableAll();
 
-            this.setBooklet(textbooklet);
+            if(textbooklet) this.setBooklet(textbooklet);
 
             // knockout punches custom filter: translation
             if(!ko.filters.translate) {

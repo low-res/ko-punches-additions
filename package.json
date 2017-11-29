@@ -8,7 +8,7 @@
   "license": "MIT",
   "format": "amd",
   "jspm": {
-    "main": "src/kopa",
+    "main": "kopa",
     "directories": {
       "lib": "src",
       "test": "tests"
