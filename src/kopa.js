@@ -15,7 +15,7 @@ define(
         }
 
 
-        p.init = function init(ko, textbooklet) {
+        p.init = function init(textbooklet) {
             var self = this;
             ko.punches.enableAll();
 
