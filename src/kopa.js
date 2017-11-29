@@ -5,56 +5,77 @@ define(
         'knockout',
         './vendor/knockout.punches.min'
     ],
-    function ( Translator, Formater, ko) {
+    function (Translator, Formater, ko) {
 
-        var translator =  new Translator();
+        var p = Kopa.prototype;
+        var instance = null;
 
-        return {
-            init : function init( ko, textbooklet ) {
-                ko.punches.enableAll();
+        function Kopa() {
+            this.translator = new Translator();
+        }
 
-                // knockout punches custom filter: translation
-                translator.setBooklet(textbooklet);
+
+        p.init = function init(ko, textbooklet) {
+            var self = this;
+            ko.punches.enableAll();
+
+            this.setBooklet(textbooklet);
+
+            // knockout punches custom filter: translation
+            if(!ko.filters.translate) {
                 ko.filters.translate = function (value, variables) {
-                    return translator.translate(ko.unwrap(value), variables);
+                    return self.translator.translate(ko.unwrap(value), variables);
                 };
+            }
 
-                // knockout punches custom filter: formater
-                ko.filters.format = function(value, formatType) {
+            // knockout punches custom filter: formater
+            if(!ko.filters.format) {
+                ko.filters.format = function (value, formatType) {
                     var formatedValue = Formater.formatValueToType(ko.unwrap(value), formatType);
                     return formatedValue;
                 };
-            },
-
-            translate: function( label, values ){
-                return translator.translate(label, values);
-            },
-
-            format: function(value, formatType){
-                var formatedValue = Formater.formatValueToType(ko.unwrap(value), formatType);
-                return formatedValue;
-            },
-
-            setLocale : function(locale){
-                translator.setLocale(locale);
-                Formater.setLocale(locale);
-            },
-
-            getLocale : function(){
-                return translator.getLocale();
-            },
-
-            setVariable : function(key, value){
-                translator.setVariable(key, value);
-            },
-
-            getVariable : function(key){
-                return translator.getVariable(key);
-            },
-
-            addCustomFormat : function ( formatId, processorFunction ) {
-                Formater.addCustomFormat( formatId, processorFunction );
             }
         }
+
+        p.translate = function (label, values) {
+            return this.translator.translate(label, values);
+        }
+
+        p.format = function (value, formatType) {
+            var formatedValue = Formater.formatValueToType(ko.unwrap(value), formatType);
+            return formatedValue;
+        }
+
+        p.setBooklet = function ( textbooklet ) {
+            this.translator.setBooklet(textbooklet);
+        }
+
+        p.setLocale = function (locale) {
+            this.translator.setLocale(locale);
+            Formater.setLocale(locale);
+        }
+
+        p.getLocale = function () {
+            return this.translator.getLocale();
+        }
+
+        p.setVariable = function (key, value) {
+            this.translator.setVariable(key, value);
+        }
+
+        p.getVariable = function (key) {
+            return this.translator.getVariable(key);
+        }
+
+        p.addCustomFormat = function (formatId, processorFunction) {
+            Formater.addCustomFormat(formatId, processorFunction);
+        }
+
+        Kopa.getInstance = function () {
+            if (instance == null) instance = new Kopa();
+            return instance;
+        }
+
+        return Kopa.getInstance();
     }
 );
