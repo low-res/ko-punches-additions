@@ -12,6 +12,7 @@ define(
 
         function Kopa() {
             this.translator = new Translator();
+            window.kopa = this;
         }
 
 
